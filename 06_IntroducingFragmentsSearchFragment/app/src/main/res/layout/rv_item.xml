@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/medium_padding">
+
+    <TextView
+        android:id="@+id/tvFoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/medium_font_size"
+        app:layout_constraintRight_toLeftOf="@id/ivStar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Gingerbread" />
+
+    <TextView
+        android:id="@+id/tvFoodType"
+        tools:text="Sweets and Candy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodName"
+        app:layout_constraintStart_toStartOf="@id/tvFoodName"
+        app:layout_constraintRight_toLeftOf="@id/ivStar"
+        android:textColor="@color/lightGrey"
+        android:textSize="@dimen/small_font_size" />
+
+    <ImageView
+        android:id="@+id/ivStar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/content_description_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

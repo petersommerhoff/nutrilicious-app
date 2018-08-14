@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Nutrilicious</string>
+    <string name="title_home">Home</string>
+    <string name="title_my_foods">My Foods</string>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Nutrilicious</string>
+    <string name="title_home">Home</string>
+    <string name="title_my_foods">My Foods</string>
+    <string name="content_description_star">favorite</string>
+    <string name="search_title">Search food…</string>
+    <string name="favorites">Favorite Foods</string>
+    <string name="proximates">Proximates</string>
+    <string name="minerals">Minerals</string>
+    <string name="vitamins">Vitamins</string>
+    <string name="lipids">Lipids</string>
+    <string name="no_data">No data available</string>
+</resources>

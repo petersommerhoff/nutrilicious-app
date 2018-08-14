@@ -1,0 +1,94 @@
+{
+  "list": {
+    "q": "raw",
+    "sr": "Legacy",
+    "ds": "Standard Reference",
+    "start": 0,
+    "end": 10,
+    "total": 1388,
+    "group": "",
+    "sort": "r",
+    "item": [
+      {
+        "offset": 0,
+        "group": "Vegetables and Vegetable Products",
+        "name": "Coriander (cilantro) leaves, raw",
+        "ndbno": "11165",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 1,
+        "group": "Fruits and Fruit Juices",
+        "name": "Apricots, raw",
+        "ndbno": "09021",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 2,
+        "group": "Fruits and Fruit Juices",
+        "name": "Bananas, raw",
+        "ndbno": "09040",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 3,
+        "group": "Fruits and Fruit Juices",
+        "name": "Blackberries, raw",
+        "ndbno": "09042",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 4,
+        "group": "Fruits and Fruit Juices",
+        "name": "Blueberries, raw",
+        "ndbno": "09050",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 5,
+        "group": "Fruits and Fruit Juices",
+        "name": "Breadfruit, raw",
+        "ndbno": "09059",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 6,
+        "group": "Fruits and Fruit Juices",
+        "name": "Cherimoya, raw",
+        "ndbno": "09062",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 7,
+        "group": "Fruits and Fruit Juices",
+        "name": "Crabapples, raw",
+        "ndbno": "09077",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 8,
+        "group": "Fruits and Fruit Juices",
+        "name": "Cranberries, raw",
+        "ndbno": "09078",
+        "ds": "SR",
+        "manu": "none"
+      },
+      {
+        "offset": 9,
+        "group": "Fruits and Fruit Juices",
+        "name": "Elderberries, raw",
+        "ndbno": "09088",
+        "ds": "SR",
+        "manu": "none"
+      }
+    ]
+  }
+}

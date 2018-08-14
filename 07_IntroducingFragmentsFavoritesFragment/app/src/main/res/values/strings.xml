@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Nutrilicious</string>
+    <string name="title_home">Home</string>
+    <string name="title_my_foods">My Foods</string>
+    <string name="content_description_star">favorite</string>
+    <string name="search_title">Search food…</string>
+    <string name="favorites">Favorite Foods</string>
+</resources>

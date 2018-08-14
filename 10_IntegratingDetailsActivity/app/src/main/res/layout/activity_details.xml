@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/medium_padding"
+        tools:context=".view.detail.FoodDetailsActivity">
+
+        <TextView
+            android:id="@+id/tvFoodName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/medium_padding"
+            android:textSize="@dimen/huge_font_size" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/proximates"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/medium_font_size" />
+
+        <TextView
+            android:id="@+id/tvProximates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.1" />
+
+        <include layout="@layout/horizontal_divider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/vitamins"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/medium_font_size" />
+
+        <TextView
+            android:id="@+id/tvVitamins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include layout="@layout/horizontal_divider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/minerals"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/medium_font_size" />
+
+        <TextView
+            android:id="@+id/tvMinerals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include layout="@layout/horizontal_divider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lipids"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/medium_font_size" />
+
+        <TextView
+            android:id="@+id/tvLipids"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>
