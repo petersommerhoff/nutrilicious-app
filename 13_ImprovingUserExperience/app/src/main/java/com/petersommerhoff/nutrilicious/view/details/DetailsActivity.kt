@@ -1,15 +1,20 @@
 package com.petersommerhoff.nutrilicious.view.details
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.petersommerhoff.nutrilicious.R
-import com.petersommerhoff.nutrilicious.model.*
+import com.petersommerhoff.nutrilicious.model.FoodDetails
+import com.petersommerhoff.nutrilicious.model.Nutrient
+import com.petersommerhoff.nutrilicious.model.NutrientType
+import com.petersommerhoff.nutrilicious.model.RDI
+import com.petersommerhoff.nutrilicious.view.common.UI
+import com.petersommerhoff.nutrilicious.view.common.bgScope
 import com.petersommerhoff.nutrilicious.view.common.getViewModel
 import com.petersommerhoff.nutrilicious.viewmodel.DetailsViewModel
 import kotlinx.android.synthetic.main.activity_details.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.*
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 const val FOOD_ID_EXTRA = "NDBNO"
 
@@ -30,7 +35,7 @@ class DetailsActivity : AppCompatActivity() {
     if (foodId.isBlank()) return
 
     setLoading(true)
-    launch {
+    bgScope.launch {
       val details = detailsViewModel.getDetails(foodId)
       withContext(UI) {
         setLoading(false)

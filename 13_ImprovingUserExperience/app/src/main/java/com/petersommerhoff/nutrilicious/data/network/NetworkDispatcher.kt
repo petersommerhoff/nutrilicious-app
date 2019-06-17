@@ -1,8 +1,9 @@
 package com.petersommerhoff.nutrilicious.data.network
 
-import kotlinx.coroutines.experimental.newFixedThreadPoolContext
+import kotlinx.coroutines.asCoroutineDispatcher
+import java.util.concurrent.Executors
 
 /**
  * @author Peter Sommerhoff
  */
-val NETWORK = newFixedThreadPoolContext(2, "NETWORK")
+val NETWORK = Executors.newFixedThreadPool(2).asCoroutineDispatcher()

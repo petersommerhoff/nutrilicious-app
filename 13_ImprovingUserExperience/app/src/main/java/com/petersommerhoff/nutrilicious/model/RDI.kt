@@ -19,21 +19,21 @@ enum class WeightUnit {
 
   companion object {
     fun fromString(unit: String) = when(unit) {
-      "g" -> WeightUnit.GRAMS
-      "mg" -> WeightUnit.MILLIGRAMS
-      "\u00b5g" -> WeightUnit.MICROGRAMS
-      "kcal" -> WeightUnit.KCAL
-      "IU" -> WeightUnit.IU
+      "g" -> GRAMS
+      "mg" -> MILLIGRAMS
+      "\u00b5g" -> MICROGRAMS
+      "kcal" -> KCAL
+      "IU" -> IU
       else -> throw IllegalArgumentException("Unknown weight unit: $unit")
     }
   }
 
   override fun toString(): String = when(this) {
-    WeightUnit.GRAMS -> "g"
-    WeightUnit.MILLIGRAMS -> "mg"
-    WeightUnit.MICROGRAMS -> "\u00b5g"
-    WeightUnit.KCAL -> "kcal"
-    WeightUnit.IU -> "IU"
+    GRAMS -> "g"
+    MILLIGRAMS -> "mg"
+    MICROGRAMS -> "\u00b5g"
+    KCAL -> "kcal"
+    IU -> "IU"
   }
 }
 

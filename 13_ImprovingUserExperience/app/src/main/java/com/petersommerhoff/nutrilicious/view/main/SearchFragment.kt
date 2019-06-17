@@ -7,16 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.petersommerhoff.nutrilicious.R
-import com.petersommerhoff.nutrilicious.data.network.NETWORK
 import com.petersommerhoff.nutrilicious.model.Food
+import com.petersommerhoff.nutrilicious.view.common.UI
+import com.petersommerhoff.nutrilicious.view.common.bgScope
 import com.petersommerhoff.nutrilicious.view.common.getViewModel
 import com.petersommerhoff.nutrilicious.view.common.snackbar
 import com.petersommerhoff.nutrilicious.viewmodel.FavoritesViewModel
 import com.petersommerhoff.nutrilicious.viewmodel.SearchViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * @author Peter Sommerhoff
@@ -63,7 +63,7 @@ class SearchFragment : Fragment() {
     lastSearch = searchTerm
     swipeRefresh?.isRefreshing = true
 
-    launch {
+    bgScope.launch {
       val favoritesIds: List<String> = favoritesViewModel.getAllIds()
       val foods: List<Food> = searchViewModel.getFoodsFor(searchTerm)
           .onEach { if (favoritesIds.contains(it.id)) it.isFavorite = true }

@@ -1,11 +1,16 @@
 package com.petersommerhoff.nutrilicious.data
 
 import android.content.Context
-import com.petersommerhoff.nutrilicious.data.db.*
-import com.petersommerhoff.nutrilicious.data.network.*
-import com.petersommerhoff.nutrilicious.data.network.dto.*
+import com.petersommerhoff.nutrilicious.data.db.AppDatabase
+import com.petersommerhoff.nutrilicious.data.db.DB
+import com.petersommerhoff.nutrilicious.data.db.dbScope
+import com.petersommerhoff.nutrilicious.data.network.NETWORK
+import com.petersommerhoff.nutrilicious.data.network.dto.DetailsDto
+import com.petersommerhoff.nutrilicious.data.network.dto.DetailsWrapper
+import com.petersommerhoff.nutrilicious.data.network.usdaApi
 import com.petersommerhoff.nutrilicious.model.FoodDetails
-import kotlinx.coroutines.experimental.*
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 
 /**
@@ -15,7 +20,7 @@ class DetailsRepository(ctx: Context) {
 
   private val detailsDao by lazy { AppDatabase.getInstance(ctx).detailsDao() }
 
-  fun add(details: FoodDetails) = launch(DB) { detailsDao.insert(details) }
+  fun add(details: FoodDetails) = dbScope.launch { detailsDao.insert(details) }
 
   suspend fun getDetails(id: String): FoodDetails? {
     return withContext(DB) { detailsDao.loadById(id) }       // Prefers database
