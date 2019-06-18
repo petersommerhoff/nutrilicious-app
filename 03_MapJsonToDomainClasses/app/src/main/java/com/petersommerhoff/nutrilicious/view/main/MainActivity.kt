@@ -3,14 +3,15 @@ package com.petersommerhoff.nutrilicious.view.main
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.*
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
 import com.petersommerhoff.nutrilicious.R
-import com.petersommerhoff.nutrilicious.data.network.*
+import com.petersommerhoff.nutrilicious.data.network.networkScope
+import com.petersommerhoff.nutrilicious.data.network.usdaApi
 import com.petersommerhoff.nutrilicious.model.Food
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     navigation.setOnNavigationItemSelectedListener(navListener)
 
-    launch(NETWORK) {
+    networkScope.launch {
       val dtos = usdaApi.getFoods("raw").execute()?.body()?.list?.item!!
       val foods: List<Food> = dtos.map(::Food)
 
