@@ -8,11 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.petersommerhoff.nutrilicious.R
+import com.petersommerhoff.nutrilicious.view.common.UI
+import com.petersommerhoff.nutrilicious.view.common.bgScope
 import com.petersommerhoff.nutrilicious.view.common.getViewModel
 import com.petersommerhoff.nutrilicious.viewmodel.FavoritesViewModel
 import kotlinx.android.synthetic.main.fragment_favorites.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.launch
 
 /**
  * @author Peter Sommerhoff
@@ -42,7 +43,7 @@ class FavoritesFragment : Fragment() {
     (activity as? MainActivity)?.setUpRecyclerView(rvFavorites, emptyList())
   }
 
-  private fun observeFavorites() = launch {
+  private fun observeFavorites() = bgScope.launch {
     val favorites = favoritesViewModel.getFavorites()
     favorites.observe(this@FavoritesFragment, Observer { foods ->
       foods?.let {

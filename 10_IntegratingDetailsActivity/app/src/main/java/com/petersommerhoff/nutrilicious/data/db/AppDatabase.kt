@@ -3,10 +3,14 @@ package com.petersommerhoff.nutrilicious.data.db
 import android.arch.persistence.room.*
 import android.content.Context
 import com.petersommerhoff.nutrilicious.model.Food
+import kotlinx.coroutines.CoroutineScope
 
 /**
  * @author Peter Sommerhoff
  */
+
+val dbScope = CoroutineScope(DB)
+
 @Database(entities = [Food::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
