@@ -6,17 +6,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.*
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.widget.SearchView
 import com.petersommerhoff.nutrilicious.R
-import com.petersommerhoff.nutrilicious.data.network.*
 import com.petersommerhoff.nutrilicious.model.Food
-import com.petersommerhoff.nutrilicious.view.common.*
-import com.petersommerhoff.nutrilicious.view.details.*
+import com.petersommerhoff.nutrilicious.view.common.addFragmentToState
+import com.petersommerhoff.nutrilicious.view.common.getViewModel
+import com.petersommerhoff.nutrilicious.view.common.replaceFragment
+import com.petersommerhoff.nutrilicious.view.common.toast
+import com.petersommerhoff.nutrilicious.view.details.DetailsActivity
+import com.petersommerhoff.nutrilicious.view.details.FOOD_ID_EXTRA
 import com.petersommerhoff.nutrilicious.viewmodel.FavoritesViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.experimental.launch
 
 private const val SEARCH_FRAGMENT_TAG = "SEARCH_FRAGMENT"
 
@@ -56,7 +60,7 @@ class MainActivity : AppCompatActivity() {
       onItemClick = { startDetailsActivity(it) },
       onStarClick = { food, layoutPosition ->
         toggleFavorite(food)
-        rv.adapter.notifyItemChanged(layoutPosition)
+        rv.adapter?.notifyItemChanged(layoutPosition)
       })
 
   private fun startDetailsActivity(food: Food) {
