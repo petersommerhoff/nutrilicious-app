@@ -6,12 +6,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.*
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.widget.SearchView
 import com.petersommerhoff.nutrilicious.R
 import com.petersommerhoff.nutrilicious.model.Food
-import com.petersommerhoff.nutrilicious.view.common.*
+import com.petersommerhoff.nutrilicious.view.common.addFragmentToState
+import com.petersommerhoff.nutrilicious.view.common.replaceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val SEARCH_FRAGMENT_TAG = "SEARCH_FRAGMENT"
