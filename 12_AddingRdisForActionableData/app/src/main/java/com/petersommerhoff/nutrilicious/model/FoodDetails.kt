@@ -1,8 +1,11 @@
 package com.petersommerhoff.nutrilicious.model
 
-import android.arch.persistence.room.*
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
+import android.arch.persistence.room.TypeConverters
 import com.petersommerhoff.nutrilicious.data.db.NutrientListConverter
-import com.petersommerhoff.nutrilicious.data.network.dto.*
+import com.petersommerhoff.nutrilicious.data.network.dto.DetailsDto
+import com.petersommerhoff.nutrilicious.data.network.dto.NutrientDto
 
 /**
  * @author Peter Sommerhoff

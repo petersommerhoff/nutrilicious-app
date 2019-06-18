@@ -1,8 +1,10 @@
 package com.petersommerhoff.nutrilicious.data.db
 
 import android.arch.persistence.room.TypeConverter
-import com.petersommerhoff.nutrilicious.model.*
-import com.squareup.moshi.*
+import com.petersommerhoff.nutrilicious.model.Nutrient
+import com.petersommerhoff.nutrilicious.model.NutrientType
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
 
 /**
  * @author Peter Sommerhoff
