@@ -6,16 +6,22 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.*
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.widget.SearchView
 import com.petersommerhoff.nutrilicious.R
-import com.petersommerhoff.nutrilicious.data.network.*
+import com.petersommerhoff.nutrilicious.data.network.networkScope
+import com.petersommerhoff.nutrilicious.data.network.usdaApi
 import com.petersommerhoff.nutrilicious.model.Food
-import com.petersommerhoff.nutrilicious.view.common.*
+import com.petersommerhoff.nutrilicious.view.common.addFragmentToState
+import com.petersommerhoff.nutrilicious.view.common.getViewModel
+import com.petersommerhoff.nutrilicious.view.common.replaceFragment
+import com.petersommerhoff.nutrilicious.view.common.toast
 import com.petersommerhoff.nutrilicious.viewmodel.FavoritesViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.launch
 
 private const val SEARCH_FRAGMENT_TAG = "SEARCH_FRAGMENT"
 
@@ -54,7 +60,7 @@ class MainActivity : AppCompatActivity() {
       items,
       onStarClick = { food, layoutPosition ->
         toggleFavorite(food)
-        rv.adapter.notifyItemChanged(layoutPosition)
+        rv.adapter?.notifyItemChanged(layoutPosition)
       })
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
     navigation.setOnNavigationItemSelectedListener(navListener)
 
-    launch(NETWORK) { usdaApi.getDetails("09070").execute() }
+    networkScope.launch { usdaApi.getDetails("09070").execute() }
   }
 
   private fun toggleFavorite(food: Food) {
