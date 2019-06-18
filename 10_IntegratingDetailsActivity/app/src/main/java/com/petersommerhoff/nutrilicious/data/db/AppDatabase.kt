@@ -1,6 +1,8 @@
 package com.petersommerhoff.nutrilicious.data.db
 
-import android.arch.persistence.room.*
+import android.arch.persistence.room.Database
+import android.arch.persistence.room.Room
+import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import com.petersommerhoff.nutrilicious.model.Food
 import kotlinx.coroutines.CoroutineScope

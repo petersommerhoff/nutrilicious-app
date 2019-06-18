@@ -1,6 +1,7 @@
 package com.petersommerhoff.nutrilicious.model
 
-import com.petersommerhoff.nutrilicious.data.network.dto.*
+import com.petersommerhoff.nutrilicious.data.network.dto.DetailsDto
+import com.petersommerhoff.nutrilicious.data.network.dto.NutrientDto
 
 /**
  * @author Peter Sommerhoff
