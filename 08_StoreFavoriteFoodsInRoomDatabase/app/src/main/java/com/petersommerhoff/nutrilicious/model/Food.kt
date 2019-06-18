@@ -1,6 +1,7 @@
 package com.petersommerhoff.nutrilicious.model
 
-import android.arch.persistence.room.*
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import com.petersommerhoff.nutrilicious.data.network.dto.FoodDto
 
 /**

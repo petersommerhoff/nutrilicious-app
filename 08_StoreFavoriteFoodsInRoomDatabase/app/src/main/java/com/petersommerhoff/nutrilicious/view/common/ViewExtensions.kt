@@ -1,6 +1,7 @@
 package com.petersommerhoff.nutrilicious.view.common
 
-import android.arch.lifecycle.*
+import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModelProviders
 import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
