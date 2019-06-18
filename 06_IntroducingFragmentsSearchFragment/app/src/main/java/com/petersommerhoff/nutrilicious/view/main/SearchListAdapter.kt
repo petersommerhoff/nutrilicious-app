@@ -1,7 +1,9 @@
 package com.petersommerhoff.nutrilicious.view.main
 
 import android.support.v7.widget.RecyclerView
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.petersommerhoff.nutrilicious.R
 import com.petersommerhoff.nutrilicious.model.Food
 import kotlinx.android.extensions.LayoutContainer

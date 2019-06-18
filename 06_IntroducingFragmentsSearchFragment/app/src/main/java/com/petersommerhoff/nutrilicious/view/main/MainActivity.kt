@@ -9,7 +9,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.widget.SearchView
 import com.petersommerhoff.nutrilicious.R
-import com.petersommerhoff.nutrilicious.view.common.*
+import com.petersommerhoff.nutrilicious.view.common.addFragmentToState
+import com.petersommerhoff.nutrilicious.view.common.replaceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val SEARCH_FRAGMENT_TAG = "SEARCH_FRAGMENT"
